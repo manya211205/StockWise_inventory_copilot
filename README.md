@@ -1,7 +1,7 @@
 # StockWise — Inventory Decision Copilot
 
 ## Overview
-StockWise is a prototype inventory decision-support tool that helps retailers identify products at risk of stockouts and prioritize replenishment decisions.
+StockWise is a prototype inventory decision-support tool that helps retailers identify products at risk of stockouts and prioritize replenishment decisions. 
 
 ## Problem
 Retailers need to balance product availability with inventory holding costs. Limited visibility into stock levels, daily sales, incoming inventory, and supplier lead times can make replenishment decisions difficult.
