@@ -204,6 +204,98 @@ st.download_button(
     mime="text/csv",
 )
 
+
+# Prioritised Action List
+st.divider()
+st.header("🎯 Prioritised Action List")
+st.write(
+    "Focus on the products that need attention first. "
+    "Actions are ranked using inventory risk and replenishment needs."
+)
+
+action_list = inventory.copy()
+
+action_list["Action Priority"] = action_list["Risk_Level"].map({
+    "High Risk": 1,
+    "Medium Risk": 2,
+    "Low Risk": 3,
+}).fillna(4)
+
+def get_next_action(row):
+    if row["Risk_Level"] == "High Risk":
+        if row["Suggested_Reorder_Qty"] > 0:
+            return "Urgent: Review and place replenishment order"
+        return "Urgent: Check supplier delivery and stock availability"
+
+    if row["Risk_Level"] == "Medium Risk":
+        if row["Suggested_Reorder_Qty"] > 0:
+            return "Plan replenishment before stock becomes critical"
+        return "Monitor stock and upcoming demand"
+
+    if row["Suggested_Reorder_Qty"] > 0:
+        return "Review suggested replenishment quantity"
+
+    return "No immediate action required; continue monitoring"
+
+action_list["Recommended Action"] = action_list.apply(
+    get_next_action, axis=1
+)
+
+action_list = action_list.sort_values(
+    by=[
+        "Action Priority",
+        "Projected_Days_of_Cover",
+        "Suggested_Order_Cost",
+    ],
+    ascending=[True, True, False],
+)
+
+action_list["Action Priority"] = action_list["Action Priority"].map({
+    1: "P1 - Urgent",
+    2: "P2 - Plan",
+    3: "P3 - Monitor",
+    4: "Review",
+})
+
+priority_filter = st.multiselect(
+    "Filter action list by priority",
+    options=["P1 - Urgent", "P2 - Plan", "P3 - Monitor"],
+    default=["P1 - Urgent", "P2 - Plan", "P3 - Monitor"],
+)
+
+visible_actions = action_list[
+    action_list["Action Priority"].isin(priority_filter)
+]
+
+st.dataframe(
+    visible_actions[
+        [
+            "SKU",
+            "Product",
+            "Risk_Level",
+            "Projected_Days_of_Cover",
+            "Lead_Time_Days",
+            "Suggested_Reorder_Qty",
+            "Suggested_Order_Cost",
+            "Recommended Action",
+            "Action Priority",
+        ]
+    ].rename(columns={
+        "Risk_Level": "Risk Level",
+        "Projected_Days_of_Cover": "Projected Days of Cover",
+        "Lead_Time_Days": "Supplier Lead Time (Days)",
+        "Suggested_Reorder_Qty": "Suggested Reorder Units",
+        "Suggested_Order_Cost": "Estimated Order Cost (₹)",
+    }),
+    use_container_width=True,
+    hide_index=True,
+)
+
+st.caption(
+    "Priority is based on the current rule-based risk classification, "
+    "projected stock cover, and suggested replenishment. "
+    "Validate actions against actual supplier and business conditions."
+)
 st.caption(
     "StockWise prototype | Uses a rule-based replenishment policy. "
     "Demo data is synthetic. Validate recommendations against "
