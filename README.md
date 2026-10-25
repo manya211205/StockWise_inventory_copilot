@@ -67,7 +67,11 @@ StockWise is not just a working inventory prototype. This repository also docume
 
 ### Product Documentation
 
-- [Phase 2: User Research, Persona & Jobs to Be Done](product-management/02-user-research-and-jtbd.md)
-- [Phase 3: Product Requirements and MVP Definition](product-management/03-prd-and-mvp.md)
+### Product Documentation
+
+- [Phase 2: User Research, Persona & Jobs to Be Done](https://github.com/manya211205/StockWise_inventory_copilot/blob/main/userresearch_and_jtbd.md)
+- [Phase 3: Product Requirements and MVP Definition](https://github.com/manya211205/StockWise_inventory_copilot/blob/main/prdandmvp.md)
+
+*Note: User needs and problem statements are currently hypotheses pending validation through interviews with actual users.*
 
 *Note: Proposed user needs and pain points are hypotheses until validated through research with actual users. Upcoming phases will be added as the case study develops.*
