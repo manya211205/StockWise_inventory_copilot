@@ -120,3 +120,75 @@ def calculate_inventory(df):
     )
 
     return df
+
+
+def validate_inventory_upload(df):
+    """Validate an uploaded inventory CSV before calculations."""
+
+    required_columns = [
+        "SKU",
+        "Product",
+        "Category",
+        "Current_Stock",
+        "Avg_Daily_Sales",
+        "Lead_Time_Days",
+        "Incoming_Stock",
+        "Unit_Cost"
+    ]
+
+    missing_columns = [
+        column for column in required_columns
+        if column not in df.columns
+    ]
+
+    if missing_columns:
+        return False, (
+            "Missing required columns: "
+            + ", ".join(missing_columns)
+        )
+
+    if df.empty:
+        return False, "The uploaded file contains no inventory rows."
+
+    numeric_columns = [
+        "Current_Stock",
+        "Avg_Daily_Sales",
+        "Lead_Time_Days",
+        "Incoming_Stock",
+        "Unit_Cost"
+    ]
+
+    for column in numeric_columns:
+        df[column] = pd.to_numeric(df[column], errors="coerce")
+
+        if df[column].isna().any():
+            return False, (
+                f"Column '{column}' contains missing or invalid numbers."
+            )
+
+    if (df["Current_Stock"] < 0).any():
+        return False, "Current stock cannot be negative."
+
+    if (df["Avg_Daily_Sales"] <= 0).any():
+        return False, "Average daily sales must be greater than zero."
+
+    if (df["Lead_Time_Days"] <= 0).any():
+        return False, "Lead time must be greater than zero."
+
+    if (df["Incoming_Stock"] < 0).any():
+        return False, "Incoming stock cannot be negative."
+
+    if (df["Unit_Cost"] < 0).any():
+        return False, "Unit cost cannot be negative."
+
+    if df["SKU"].isna().any() or df["SKU"].astype(str).str.strip().eq("").any():
+        return False, "Every product must have a SKU."
+
+    if df["SKU"].duplicated().any():
+        return False, "Duplicate SKUs found. Each SKU must be unique."
+
+    if df[["Product", "Category"]].isna().any().any():
+        return False, "Product and Category cannot contain empty values."
+
+    return True, "Inventory file validated successfully."
+
