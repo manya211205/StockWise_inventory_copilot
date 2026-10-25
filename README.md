@@ -53,25 +53,13 @@ Working prototype built and tested with synthetic data.
 
 ## Product Management Case Study
 
-StockWise is not just a working inventory prototype. This repository also documents the product thinking behind it, from problem discovery to prioritization and product strategy.
-
-### Project Phases
-
-| Phase | Focus | Status |
-|---|---|---|
-| Phase 1 | Problem discovery and initial problem definition | Initial hypotheses |
-| Phase 2 | User persona, Jobs to Be Done (JTBD), and research plan | Documented; research pending |
-| Phase 3 | Product requirements and MVP definition | Documented; assumptions pending validation |
-| Phase 4 | Feature prioritization, success metrics, and experiments | Upcoming |
-| Phase 5 | Blinkit product teardown using product-management frameworks | Upcoming |
+This project is being developed using product management principles, from problem discovery and requirements definition to feature prioritization and product evaluation.
 
 ### Product Documentation
 
-### Product Documentation
+1. **Phase 2 — User Research and JTBD:** [Read documentation](userresearch_and_jtbd.md)
+2. **Phase 3 — Product Requirements and MVP:** [Read documentation](prdandmvp.md)
+3. **Phase 4 — Feature Prioritization and Success Metrics:** [Read documentation](prioritizationandmetrics.md)
+4. **Phase 5 — Blinkit Product Teardown:** Upcoming
 
-- [Phase 2: User Research, Persona & Jobs to Be Done](https://github.com/manya211205/StockWise_inventory_copilot/blob/main/userresearch_and_jtbd.md)
-- [Phase 3: Product Requirements and MVP Definition](https://github.com/manya211205/StockWise_inventory_copilot/blob/main/prdandmvp.md)
-
-*Note: User needs and problem statements are currently hypotheses pending validation through interviews with actual users.*
-
-*Note: Proposed user needs and pain points are hypotheses until validated through research with actual users. Upcoming phases will be added as the case study develops.*
+*Note: The user personas, requirements, prioritization decisions, and proposed metrics are hypotheses pending validation through user research and real-world testing.*
