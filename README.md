@@ -61,12 +61,13 @@ StockWise is not just a working inventory prototype. This repository also docume
 |---|---|---|
 | Phase 1 | Problem discovery and initial problem definition | Initial hypotheses |
 | Phase 2 | User persona, Jobs to Be Done (JTBD), and research plan | Documented; research pending |
-| Phase 3 | Product requirements and MVP definition | Upcoming |
+| Phase 3 | Product requirements and MVP definition | Documented; assumptions pending validation |
 | Phase 4 | Feature prioritization, success metrics, and experiments | Upcoming |
 | Phase 5 | Blinkit product teardown using product-management frameworks | Upcoming |
 
 ### Product Documentation
 
 - [Phase 2: User Research, Persona & Jobs to Be Done](product-management/02-user-research-and-jtbd.md)
+- [Phase 3: Product Requirements and MVP Definition](product-management/03-prd-and-mvp.md)
 
 *Note: Proposed user needs and pain points are hypotheses until validated through research with actual users. Upcoming phases will be added as the case study develops.*
