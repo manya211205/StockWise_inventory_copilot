@@ -291,6 +291,101 @@ st.dataframe(
     hide_index=True,
 )
 
+
+# Budget-Aware Replenishment
+st.divider()
+st.header("💰 Budget-Aware Replenishment")
+
+st.write(
+    "Set your purchasing budget to identify which recommended "
+    "reorders can be prioritised within that limit."
+)
+
+budget = st.number_input(
+    "Available purchasing budget (₹)",
+    min_value=0,
+    value=50000,
+    step=5000,
+)
+
+budget_items = reorder_items.copy()
+
+if budget_items.empty:
+    st.success("No replenishment orders are currently recommended.")
+else:
+    # Prioritise higher-risk products, then lower days of cover
+    budget_items = budget_items.sort_values(
+        by=[
+            "Risk_Priority",
+            "Projected_Days_of_Cover",
+            "Suggested_Order_Cost",
+        ],
+        ascending=[True, True, False],
+    )
+
+    selected_rows = []
+    remaining_budget = float(budget)
+
+    for _, row in budget_items.iterrows():
+        order_cost = float(row["Suggested_Order_Cost"])
+
+        if order_cost <= remaining_budget:
+            selected_rows.append({
+                "SKU": row["SKU"],
+                "Product": row["Product"],
+                "Risk Level": row["Risk_Level"],
+                "Reorder Units": int(row["Suggested_Reorder_Qty"]),
+                "Estimated Cost (₹)": order_cost,
+                "Decision": "Prioritised within budget",
+            })
+            remaining_budget -= order_cost
+        else:
+            selected_rows.append({
+                "SKU": row["SKU"],
+                "Product": row["Product"],
+                "Risk Level": row["Risk_Level"],
+                "Reorder Units": int(row["Suggested_Reorder_Qty"]),
+                "Estimated Cost (₹)": order_cost,
+                "Decision": "Deferred - exceeds remaining budget",
+            })
+
+    budget_plan = pd.DataFrame(selected_rows)
+
+    selected_orders = budget_plan[
+        budget_plan["Decision"] == "Prioritised within budget"
+    ]
+
+    selected_cost = float(
+        selected_orders["Estimated Cost (₹)"].sum()
+    )
+
+    budget_col1, budget_col2, budget_col3 = st.columns(3)
+
+    budget_col1.metric(
+        "Available Budget",
+        f"₹{budget:,.0f}",
+    )
+    budget_col2.metric(
+        "Planned Spend",
+        f"₹{selected_cost:,.0f}",
+    )
+    budget_col3.metric(
+        "Budget Remaining",
+        f"₹{budget - selected_cost:,.0f}",
+    )
+
+    st.dataframe(
+        budget_plan,
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.caption(
+        "Planning assumption: each recommended product is treated as "
+        "an all-or-nothing order. Higher-risk products are considered "
+        "first. This is a simple prioritisation heuristic, not an "
+        "optimised purchasing plan."
+    )
 st.caption(
     "Priority is based on the current rule-based risk classification, "
     "projected stock cover, and suggested replenishment. "
