@@ -60,6 +60,6 @@ This project is being developed using product management principles, from proble
 1. **Phase 2 — User Research and JTBD:** [Read documentation](userresearch_and_jtbd.md)
 2. **Phase 3 — Product Requirements and MVP:** [Read documentation](prdandmvp.md)
 3. **Phase 4 — Feature Prioritization and Success Metrics:** [Read documentation](prioritizationandmetrics.md)
-4. **Phase 5 — Blinkit Product Teardown:** Upcoming
+4. **Phase 5 — Instamart Product Teardown:** [Read Doc](https://github.com/manya211205/StockWise_inventory_copilot/blob/main/instamart_teardown.md)
 
 *Note: The user personas, requirements, prioritization decisions, and proposed metrics are hypotheses pending validation through user research and real-world testing.*
