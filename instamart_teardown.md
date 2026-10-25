@@ -481,3 +481,74 @@ The order of implementation should be determined by the largest verified sources
 **Final recommendation:** Prioritize contribution-per-order analysis and store-level productivity diagnosis first. Use these findings to identify the highest-impact operational interventions, then test them with clear financial outcomes and customer-experience guardrails.
 
 The goal is not to maximize short-term margin at any cost. It is to build a quick-commerce business that can serve customers reliably while generating sustainable contribution and moving toward profitability.
+
+## 11. Step 3: Prioritizing the Core Business Problem
+
+### 11.1 Objective
+
+The objective of this stage is to identify which potential problem should be investigated first to improve Swiggy Instamart's unit economics and path to profitability.
+
+The prioritization considers potential financial impact, strategic relevance, feasibility of investigation, and confidence in the available evidence.
+
+### 11.2 Initial Problem Comparison
+
+| Problem area | Potential financial impact | Evidence currently available | Initial decision |
+|---|---|---|---|
+| Contribution per order | High | Public adjusted EBITDA and operating disclosures; internal order-level economics unavailable | Investigate first |
+| Dark-store productivity | High | Public store counts; store-level contribution unavailable | Investigate first |
+| Promotional spending | Potentially high | Requires incremental promotion and retention data | Investigate next |
+| Inventory and assortment | Potentially high | Requires SKU-level margins, stockouts, and inventory-loss data | Investigate next |
+| Delivery efficiency | Potentially high | Requires delivery cost and order-density data | Investigate next |
+| Basket economics | Medium–high | Requires order-level basket and contribution data | Investigate next |
+| Private-label expansion | Uncertain | Requires product-level margin and repeat-purchase data | Evaluate after diagnosis |
+| Operating-model changes | Potentially high | Requires comparable store and working-capital data | Evaluate with controlled analysis |
+
+These are qualitative hypotheses, not measured impact estimates.
+
+### 11.3 Selected Investigation Priority
+
+**Priority: Diagnose contribution per order and dark-store productivity.**
+
+The rationale is that these two areas provide a foundation for evaluating the economics of Instamart's existing operations.
+
+Before recommending expansion, cost reductions, or promotional changes, the business needs to understand:
+
+- Whether orders generate positive contribution after relevant variable costs.
+- Which stores generate sufficient contribution to cover their operating costs.
+- Whether new stores follow a viable path toward maturity.
+- Which cost or revenue components explain the largest differences between stores and customer segments.
+
+This is an investigation priority, not a conclusion that either factor is the proven primary cause of Instamart's losses.
+
+### 11.4 Data Required
+
+The ideal analysis would combine:
+
+1. Revenue and variable costs per order.
+2. Orders per store per day.
+3. Store-level contribution and operating expenses.
+4. Store opening dates and maturity cohorts.
+5. Discount expenditure and incremental order impact.
+6. Delivery cost, cancellations, and service reliability.
+7. Inventory turnover, stockouts, waste, and shrinkage.
+
+The analysis should compare similar stores and cohorts over comparable periods to avoid misleading conclusions.
+
+### 11.5 Decision Rule
+
+The first operational intervention should target the problem that demonstrates:
+
+- Material financial impact.
+- Credible evidence of an underlying cause.
+- A feasible intervention.
+- Measurable improvement in contribution or operating costs.
+- Acceptable customer-experience and retention outcomes.
+
+If internal data shows that another area, such as promotions or inventory losses, accounts for a larger share of losses, the priority should change accordingly.
+
+### 11.6 Conclusion
+
+The most defensible next step is to diagnose unit economics and store-level performance before selecting a single margin-improvement intervention.
+
+Public financial results establish that Instamart faces a substantial adjusted EBITDA loss, but they do not reveal the precise contribution of each potential cause. A data-led diagnosis is therefore necessary before making stronger claims or committing resources.
+
