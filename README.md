@@ -48,3 +48,25 @@ Working prototype built and tested with synthetic data.
 
 **Live Demo:** [Add your Streamlit app URL here]
 **GitHub Repository:** https://github.com/YOUR-USERNAME/stockwise-inventory-copilot
+
+---
+
+## Product Management Case Study
+
+StockWise is not just a working inventory prototype. This repository also documents the product thinking behind it, from problem discovery to prioritization and product strategy.
+
+### Project Phases
+
+| Phase | Focus | Status |
+|---|---|---|
+| Phase 1 | Problem discovery and initial problem definition | Initial hypotheses |
+| Phase 2 | User persona, Jobs to Be Done (JTBD), and research plan | Documented; research pending |
+| Phase 3 | Product requirements and MVP definition | Upcoming |
+| Phase 4 | Feature prioritization, success metrics, and experiments | Upcoming |
+| Phase 5 | Blinkit product teardown using product-management frameworks | Upcoming |
+
+### Product Documentation
+
+- [Phase 2: User Research, Persona & Jobs to Be Done](product-management/02-user-research-and-jtbd.md)
+
+*Note: Proposed user needs and pain points are hypotheses until validated through research with actual users. Upcoming phases will be added as the case study develops.*
