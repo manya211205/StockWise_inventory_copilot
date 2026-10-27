@@ -46,9 +46,9 @@ Key considerations include usability, explainability, prioritization, and keepin
 ## Project Status
 Working prototype built and tested with synthetic data.
 
-**Live Demo:** [Add your Streamlit app URL here]
-**GitHub Repository:** https://github.com/YOUR-USERNAME/stockwise-inventory-copilot
-
+**Live Demo:** [https://stockwiseinventorycopilot-a7ogtxukeghekxanjsyfnc.streamlit.app/]
+**GitHub Repository:** [https://github.com/YOUR-USERNAME/stockwise-inventory-copilot
+](https://github.com/manya211205/StockWise_inventory_copilot/tree/main)
 ---
 
 ## Product Management Case Study
