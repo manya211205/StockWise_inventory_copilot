@@ -28,8 +28,6 @@ This teardown recommends a data-led margin improvement strategy:
 4. Evaluate improvements in basket contribution, inventory availability, and fulfilment efficiency.
 5. Scale interventions only when they demonstrate measurable financial benefits without unacceptable customer-experience trade-offs.
 
-This is a secondary-research analysis. The proposed root causes and interventions are hypotheses unless supported by evidence from company disclosures or internal operating data.
-
 ---
 
 ## 2. Business Context and Latest Reported Performance
